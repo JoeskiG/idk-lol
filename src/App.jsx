@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ColorBox } from './components/ColorBox'
 import { useGlobalContext } from './contexts/useGlobalContext'
 import { BaseModal } from './components/common/BaseModal'
+import { ColorBoxSettingsModal } from './components/ColorBoxSettingsModal'
 
 const gridSettings = {
   columns: {
@@ -21,9 +22,7 @@ function App() {
       console.log(`Key: ${e.key} with keycode ${e.keyCode} has been pressed`)
       if (!modal) {
         setModal(
-          <BaseModal>
-            <p>tttt</p>
-          </BaseModal>
+          <ColorBoxSettingsModal />
         )
       } else {
         clearModal()
@@ -38,9 +37,9 @@ function App() {
 
   return (
     <div
-    ref={mainRef}
-    tabIndex={0}
-    onKeyDown={handleMenuOpen}
+      ref={mainRef}
+      tabIndex={0}
+      onKeyDown={handleMenuOpen}
       className='w-full h-full'
     >
       <div
