@@ -28,3 +28,11 @@ export function randomGradient() {
 
 }
 
+export function randomColor() {
+    const color = {
+        r: GetRandomIntInRange(0, 255),
+        g: GetRandomIntInRange(0, 255),
+        b: GetRandomIntInRange(0, 255)
+    }
+    return { ...color, string: `rgb(${color.r},${color.g},${color.b})` }
+}
