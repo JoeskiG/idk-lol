@@ -14,6 +14,7 @@ export function ColorBoxProvider({ children }) {
     const [borderRadius, setBorderRadius] = useState(0)
 
     const [allowHover, setAllowHover] = useState(true)
+    const [changeIndividually, setChangeIndividually] = useState(false)
 
     let intervalId
 
@@ -35,7 +36,7 @@ export function ColorBoxProvider({ children }) {
 
         intervalId = setInterval(() => {
             setColor(randomColor())
-            setScale(GetRandomIntInRange(10, 100))
+            setScale(GetRandomIntInRange(75, 100))
             setRotation(GetRandomIntInRange(0, 179))
             setBorderRadius(GetRandomIntInRange(0, 20))
         }, newInterval)
@@ -52,10 +53,12 @@ export function ColorBoxProvider({ children }) {
         cb_setting_AllowHover: allowHover,
         cb_setting_RefreshInterval: refreshInterval,
         cb_setting_AnimationTime: animationTime,
+        cb_setting_ChangeIndividually: changeIndividually,
 
         set_cb_setting_AllowHover: setAllowHover,
         set_cb_setting_RefreshInterval: changeRefreshInterval,
-        set_cb_setting_AnimationTime: setAnimationTime
+        set_cb_setting_AnimationTime: setAnimationTime,
+        set_cb_setting_ChangeIndividually: setChangeIndividually
     };
 
     return (

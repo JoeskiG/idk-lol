@@ -6,12 +6,12 @@ import { GlobalProvider } from './contexts/useGlobalContext.jsx'
 import { ColorBoxProvider } from './contexts/useColorBoxContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <GlobalProvider>
       <ColorBoxProvider>
         <App />
       </ColorBoxProvider>
     </GlobalProvider>
 
-  </React.StrictMode>,
+  // </React.StrictMode>
 )
