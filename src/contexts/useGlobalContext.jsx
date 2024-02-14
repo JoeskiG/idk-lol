@@ -4,7 +4,7 @@ const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
   const [colorMode, setColorMode] = useState("light");
-  const [isMobile, setIsMobile] = useState(false); //Components can use this to check if the client is on a small screen or not
+  const [isMobile, setIsMobile] = useState(false)
   const [errors, setErrors] = useState([]);
   const [modal, setModal] = useState(null);
 
@@ -40,11 +40,10 @@ export function GlobalProvider({ children }) {
     
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) => //Listen for browser theme changes and set color mode variable if changed
+      .addEventListener("change", (e) =>
         setColorMode(e.matches ? "dark" : "light")
       );
 
-    //Initially set color theme state variable to browser's theme
     setColorMode(
       window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
@@ -58,7 +57,6 @@ export function GlobalProvider({ children }) {
     };
   }, []);
 
-  //Toggles between dark and light mode (essential feature :))
   const toggleColorMode = () => {
     setColorMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };

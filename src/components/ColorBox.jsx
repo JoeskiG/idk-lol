@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { GetRandomIntInRange, randomColor } from "../util/helper"
+import { getRandomIntInRange, randomColor } from "../util/helper"
 import { useColorBoxContext } from "../contexts/useColorBoxContext"
 
 export const ColorBox = () => {
@@ -52,8 +52,8 @@ export const ColorBox = () => {
     if (cb_setting_ChangeIndividually) {
         intervalId = setInterval(() => {
             setRandomGradientBg(randomColor())
-            setScale(GetRandomIntInRange(10, 100))
-            setRotation(GetRandomIntInRange(0, 179))
+            setScale(getRandomIntInRange(10, 100))
+            setRotation(getRandomIntInRange(0, 179))
         }, 2)
 
     }

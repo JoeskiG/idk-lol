@@ -19,7 +19,6 @@ function App() {
 
   const handleMenuOpen = (e) => {
     if (e.keyCode === 27) {
-      console.log(`Key: ${e.key} with keycode ${e.keyCode} has been pressed`)
       if (!modal) {
         setModal(
           <ColorBoxSettingsModal />

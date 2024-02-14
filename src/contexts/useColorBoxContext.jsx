@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { GetRandomIntInRange, randomColor } from "../util/helper";
+import { getRandomIntInRange, randomColor } from "../util/helper";
 
 const ColorBoxContext = createContext();
 
@@ -22,9 +22,9 @@ export function ColorBoxProvider({ children }) {
     useEffect(() => {
         intervalId = setInterval(() => {
             setColor(randomColor())
-            setScale(GetRandomIntInRange(10, 100))
-            setRotation(GetRandomIntInRange(0, 179))
-            setBorderRadius(GetRandomIntInRange(0, 20))
+            setScale(getRandomIntInRange(10, 100))
+            setRotation(getRandomIntInRange(0, 179))
+            setBorderRadius(getRandomIntInRange(0, 20))
         }, refreshInterval)
     }, [])
 
@@ -36,9 +36,9 @@ export function ColorBoxProvider({ children }) {
 
         intervalId = setInterval(() => {
             setColor(randomColor())
-            setScale(GetRandomIntInRange(75, 100))
-            setRotation(GetRandomIntInRange(0, 179))
-            setBorderRadius(GetRandomIntInRange(0, 20))
+            setScale(getRandomIntInRange(75, 100))
+            setRotation(getRandomIntInRange(0, 179))
+            setBorderRadius(getRandomIntInRange(0, 20))
         }, newInterval)
     }
 
